@@ -21,14 +21,15 @@ public class Charactermovement : MonoBehaviour
     float lerpedx=1f;      
     public pos[] Currentpos = {pos.left, pos.mid , pos.right };
     int pointer;
+    public float shiftroughness;
 
 
-    
-
-    
 
 
-    
+
+
+
+
 
     void Start()
     {
@@ -58,17 +59,17 @@ public class Charactermovement : MonoBehaviour
         switch(position)
     {
         case pos.left:
-            lerpedx = Mathf.Lerp(transform.position.x , -2, 0.1f);
+            lerpedx = Mathf.Lerp(transform.position.x , -2, shiftroughness);
             transform.position = new Vector3(lerpedx, transform.position.y,transform.position.z);
             break;
 
         case pos.mid:
-            lerpedx = Mathf.Lerp(transform.position.x , 1, 0.1f);
+            lerpedx = Mathf.Lerp(transform.position.x , 1, shiftroughness);
             transform.position = new Vector3(lerpedx,transform.position.y,transform.position.z);
             break;
 
         case pos.right:
-            lerpedx = Mathf.Lerp(transform.position.x , 4, 0.1f);
+            lerpedx = Mathf.Lerp(transform.position.x , 4, shiftroughness);
             transform.position = new Vector3(lerpedx ,transform.position.y,transform.position.z);
             break;
     }
